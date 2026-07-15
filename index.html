@@ -894,7 +894,7 @@
         </div>
     </div>
     <!-- Course Detail Modal -->
-    <div class="modal-overlay" id="courseModal" onclick="if(event.target===this)closeCourseModal()" style="display:none;">
+    <div class="modal" id="courseModal" onclick="if(event.target===this)closeCourseModal()" style="display:none;">
         <div class="modal-content" style="max-width:600px;">
             <button class="modal-close" onclick="closeCourseModal()">×</button>
             <div style="text-align:center;margin-bottom:24px;">
@@ -3401,11 +3401,15 @@
         showToast(t('modal_course_notify_done'));
     }
     function openCourseModal() {
-        document.getElementById('courseModal').style.display = 'flex';
+        var m = document.getElementById('courseModal');
+        m.style.display = 'flex';
+        m.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
     function closeCourseModal() {
-        document.getElementById('courseModal').style.display = 'none';
+        var m = document.getElementById('courseModal');
+        m.style.display = 'none';
+        m.classList.remove('active');
         document.body.style.overflow = '';
     }
 
