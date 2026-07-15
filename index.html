@@ -615,6 +615,151 @@
     }
     .footer-links a:hover { color: var(--text-primary); }
 
+
+    /* ===== MODAL: NEW SECTIONS ===== */
+    .modal-bestfor-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .bestfor-tag {
+        padding: 6px 14px; background: rgba(6,182,212,0.08);
+        border: 1px solid rgba(6,182,212,0.15); border-radius: 100px;
+        font-size: 13px; color: var(--accent-cyan); font-weight: 500;
+    }
+    .editor-verdict {
+        padding: 16px 20px; margin: 0;
+        background: rgba(139,92,246,0.06);
+        border-left: 3px solid var(--accent-purple);
+        border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        color: var(--text-secondary); font-size: 14px; line-height: 1.8;
+        font-style: italic;
+    }
+    .howto-steps {
+        list-style: none; padding: 0; margin: 0;
+        counter-reset: step;
+    }
+    .howto-step {
+        display: flex; align-items: flex-start; gap: 14px;
+        padding: 12px 0; border-bottom: 1px solid var(--border-subtle);
+    }
+    .howto-step:last-child { border-bottom: none; }
+    .step-num {
+        flex-shrink: 0; width: 28px; height: 28px;
+        background: rgba(139,92,246,0.12); border: 1px solid rgba(139,92,246,0.25);
+        border-radius: 50%; display: flex; align-items: center; justify-content: center;
+        font-size: 12px; font-weight: 700; color: var(--accent-purple);
+    }
+    .step-text { color: var(--text-secondary); font-size: 14px; line-height: 1.6; padding-top: 3px; }
+    .updates-timeline { padding-left: 8px; }
+    .timeline-item {
+        display: flex; align-items: flex-start; gap: 14px;
+        padding: 10px 0; position: relative;
+    }
+    .timeline-dot {
+        flex-shrink: 0; width: 10px; height: 10px;
+        background: var(--accent-cyan); border-radius: 50%;
+        margin-top: 5px; box-shadow: 0 0 8px rgba(6,182,212,0.3);
+        position: relative;
+    }
+    .timeline-item:not(:last-child) .timeline-dot::after {
+        content: ''; position: absolute; left: 4px; top: 12px;
+        width: 2px; height: calc(100% + 10px);
+        background: rgba(6,182,212,0.15);
+    }
+    .timeline-text { color: var(--text-secondary); font-size: 13px; line-height: 1.6; }
+
+    /* ===== COURSES SECTION ===== */
+    .courses-section {
+        padding: 80px 0; position: relative; overflow: hidden;
+        border-top: 1px solid var(--border-subtle);
+        background: var(--bg-surface);
+    }
+    .courses-section::before {
+        content: '';
+        position: absolute; inset: 0;
+        background:
+            radial-gradient(ellipse 50% 80% at 30% 50%, rgba(6,182,212,0.04) 0%, transparent 60%),
+            radial-gradient(ellipse 50% 80% at 70% 50%, rgba(139,92,246,0.04) 0%, transparent 60%);
+        pointer-events: none;
+    }
+    .courses-section .container { position: relative; z-index: 1; }
+    .courses-header { text-align: center; margin-bottom: 48px; }
+    .courses-header h2 {
+        font-size: 28px; font-weight: 700; letter-spacing: -0.02em;
+        margin-bottom: 12px;
+        background: var(--gradient-text);
+        -webkit-background-clip: text; background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .courses-header p {
+        color: var(--text-secondary); font-size: 16px; max-width: 560px; margin: 0 auto;
+    }
+    .courses-grid {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;
+    }
+    .course-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-lg);
+        padding: 28px 24px;
+        position: relative; overflow: hidden;
+        transition: all var(--transition);
+        display: flex; flex-direction: column;
+    }
+    .course-card::before {
+        content: '';
+        position: absolute; top: 0; left: 0; right: 0; height: 3px;
+        background: var(--gradient-main);
+        opacity: 0; transition: opacity var(--transition);
+    }
+    .course-card:hover {
+        border-color: rgba(139,92,246,0.25);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(139,92,246,0.1);
+    }
+    .course-card:hover::before { opacity: 1; }
+    .course-badge {
+        position: absolute; top: 16px; right: 16px;
+        padding: 4px 12px;
+        background: linear-gradient(135deg, rgba(6,182,212,0.15), rgba(139,92,246,0.15));
+        border: 1px solid rgba(139,92,246,0.2);
+        border-radius: 100px; font-size: 11px; font-weight: 600;
+        color: var(--accent-purple); letter-spacing: 0.02em;
+    }
+    .course-level-tag {
+        display: inline-block; padding: 3px 10px;
+        background: rgba(139,92,246,0.08);
+        border: 1px solid rgba(139,92,246,0.12);
+        border-radius: 100px; font-size: 11px;
+        font-weight: 500; color: rgba(196,181,253,0.8);
+        margin-bottom: 14px;
+    }
+    .course-icon { font-size: 32px; margin-bottom: 16px; }
+    .course-card h3 {
+        font-size: 17px; font-weight: 700; margin-bottom: 10px;
+        letter-spacing: -0.01em; color: var(--text-primary);
+    }
+    .course-card .course-desc {
+        color: var(--text-secondary); font-size: 13px; line-height: 1.7;
+        flex: 1; margin-bottom: 20px;
+    }
+    .course-btn {
+        width: 100%; padding: 11px 20px; border: 1px solid rgba(139,92,246,0.25);
+        background: rgba(139,92,246,0.08);
+        border-radius: var(--radius-md);
+        color: rgba(196,181,253,0.9); font-weight: 600; font-size: 13px;
+        cursor: pointer; transition: all var(--transition);
+        font-family: 'Inter', sans-serif;
+    }
+    .course-btn:hover {
+        background: rgba(139,92,246,0.18);
+        border-color: rgba(139,92,246,0.4);
+        box-shadow: 0 0 16px rgba(139,92,246,0.1);
+    }
+    .course-btn.notified {
+        background: rgba(6,182,212,0.1);
+        border-color: rgba(6,182,212,0.25);
+        color: var(--accent-cyan);
+        cursor: default;
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
         .hero { padding: 72px 0 48px; }
@@ -648,6 +793,7 @@
             <div class="nav-links">
                 <a href="#tools" data-i18n="nav_tools">Tools</a>
                 <a href="#categories" data-i18n="nav_categories">Categories</a>
+                <a href="#courses" data-i18n="nav_courses">Courses</a>
                 <a href="#about" data-i18n="nav_about">About</a>
                 <div class="lang-switch">
                     <button class="lang-btn" data-lang="en">EN</button>
@@ -753,6 +899,50 @@
         </div>
     </section>
 
+    
+    <section class="courses-section" id="courses">
+        <div class="container">
+            <div class="courses-header">
+                <h2 data-i18n="courses_title">AI视频创作实战课</h2>
+                <p data-i18n="courses_subtitle">从零基础到商业变现，系统掌握AI视频创作</p>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <span class="course-badge" data-i18n="courses_coming_soon">即将上线</span>
+                    <div class="course-icon">🎬</div>
+                    <span class="course-level-tag" data-i18n="courses_tag_beginner">入门</span>
+                    <h3 data-i18n="course1_title">零基础入门AI视频创作</h3>
+                    <p class="course-desc" data-i18n="course1_desc">无需任何经验，从选择工具到完成第一个AI视频，手把手带你入门</p>
+                    <button class="course-btn" onclick="handleCourseNotify(this)" data-i18n="modal_course_notify">通知我</button>
+                </div>
+                <div class="course-card">
+                    <span class="course-badge" data-i18n="courses_coming_soon">即将上线</span>
+                    <div class="course-icon">🔍</div>
+                    <span class="course-level-tag" data-i18n="courses_tag_advanced">进阶</span>
+                    <h3 data-i18n="course2_title">16款AI视频工具深度教程</h3>
+                    <p class="course-desc" data-i18n="course2_desc">每款工具详细操作指南，帮你找到最适合自己的AI视频工具</p>
+                    <button class="course-btn" onclick="handleCourseNotify(this)" data-i18n="modal_course_notify">通知我</button>
+                </div>
+                <div class="course-card">
+                    <span class="course-badge" data-i18n="courses_coming_soon">即将上线</span>
+                    <div class="course-icon">💰</div>
+                    <span class="course-level-tag" data-i18n="courses_tag_money">变现</span>
+                    <h3 data-i18n="course3_title">AI视频商业变现全攻略</h3>
+                    <p class="course-desc" data-i18n="course3_desc">从接单到自媒体运营，学会用AI视频赚钱的完整方法论</p>
+                    <button class="course-btn" onclick="handleCourseNotify(this)" data-i18n="modal_course_notify">通知我</button>
+                </div>
+                <div class="course-card">
+                    <span class="course-badge" data-i18n="courses_coming_soon">即将上线</span>
+                    <div class="course-icon">🎭</div>
+                    <span class="course-level-tag" data-i18n="courses_tag_practice">实战</span>
+                    <h3 data-i18n="course4_title">AI短剧制作实战营</h3>
+                    <p class="course-desc" data-i18n="course4_desc">从剧本到成片，掌握AI短剧制作的完整工作流和变现路径</p>
+                    <button class="course-btn" onclick="handleCourseNotify(this)" data-i18n="modal_course_notify">通知我</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="newsletter-section" id="newsletter">
         <div class="container">
             <h2 data-i18n="newsletter_title">Stay Updated on AI Video Tools</h2>
@@ -817,6 +1007,28 @@
             newsletter_success: "Thanks for subscribing! \ud83c\udf89",
             newsletter_error: "Please enter a valid email address.",
             discontinued_notice: "\u26a0\ufe0f Discontinued (March 2026) \u2014 This tool has been shut down by its developer."
+            modal_bestFor: "\ud83c\udfaf Best For",
+            modal_verdict: "\ud83d\udcdd Editor\'s Verdict",
+            modal_howto: "\ud83d\ude80 How to Start",
+            modal_updates: "\ud83d\udce2 Latest Updates",
+            modal_course_notify: "Notify Me",
+            modal_course_notify_done: "\u2705 Added to waitlist!",
+            courses_title: "AI Video Mastery Courses",
+            courses_subtitle: "From beginner to monetization, master AI video creation",
+            course1_title: "AI Video Creation from Scratch",
+            course1_desc: "No experience needed. From choosing tools to completing your first AI video, step-by-step guidance",
+            course2_title: "In-Depth Guide to 16 AI Video Tools",
+            course2_desc: "Detailed tutorials for each tool to help you find the perfect AI video tool",
+            course3_title: "AI Video Monetization Masterclass",
+            course3_desc: "From freelancing to content creation, learn the complete methodology for earning with AI video",
+            course4_title: "AI Short Drama Production Bootcamp",
+            course4_desc: "From script to final cut, master the complete workflow and monetization path for AI short dramas",
+            courses_tag_beginner: "Beginner",
+            courses_tag_advanced: "Advanced",
+            courses_tag_money: "Monetize",
+            courses_tag_practice: "Hands-on",
+            courses_coming_soon: "Coming Soon",
+            nav_courses: "Courses",
         },
         zh: {
             brand: "AI\u89c6\u9891\u5de5\u5177\u5bfc\u822a",
@@ -845,6 +1057,28 @@
             newsletter_success: "\u8ba2\u9605\u6210\u529f\uff01\ud83c\udf89",
             newsletter_error: "\u8bf7\u8f93\u5165\u6709\u6548\u7684\u90ae\u7bb1\u5730\u5740\u3002",
             discontinued_notice: "\u26a0\ufe0f \u5df2\u5173\u505c\uff082026\u5e743\u6708\uff09\u2014 \u6b64\u5de5\u5177\u5df2\u88ab\u5f00\u53d1\u8005\u505c\u8fd0\u3002"
+            modal_bestFor: "\ud83c\udfaf \u9002\u5408\u4eba\u7fa4",
+            modal_verdict: "\ud83d\udcdd \u7f16\u8f91\u70b9\u8bc4",
+            modal_howto: "\ud83d\ude80 \u4f7f\u7528\u6d41\u7a0b",
+            modal_updates: "\ud83d\udce2 \u6700\u65b0\u52a8\u6001",
+            modal_course_notify: "\u901a\u77e5\u6211",
+            modal_course_notify_done: "\u2705 \u5df2\u52a0\u5165\u7b49\u5f85\u5217\u8868\uff01",
+            courses_title: "AI\u89c6\u9891\u521b\u4f5c\u5b9e\u6218\u8bfe",
+            courses_subtitle: "\u4ece\u96f6\u57fa\u7840\u5230\u5546\u4e1a\u53d8\u73b0\uff0c\u7cfb\u7edf\u638c\u63e1AI\u89c6\u9891\u521b\u4f5c",
+            course1_title: "零基础入门AI视频创作",
+            course1_desc: "无需任何经验，从选择工具到完成第一个AI视频，手把手带你入门",
+            course2_title: "16款AI视频工具深度教程",
+            course2_desc: "每款工具详细操作指南，帮你找到最适合自己的AI视频工具",
+            course3_title: "AI视频商业变现全攻略",
+            course3_desc: "从接单到自媒体运营，学会用AI视频赚钱的完整方法论",
+            course4_title: "AI短剧制作实战营",
+            course4_desc: "从剧本到成片，掌握AI短剧制作的完整工作流和变现路径",
+            courses_tag_beginner: "\u5165\u95e8",
+            courses_tag_advanced: "\u8fdb\u9636",
+            courses_tag_money: "\u53d8\u73b0",
+            courses_tag_practice: "\u5b9e\u6218",
+            courses_coming_soon: "\u5373\u5c06\u4e0a\u7ebf",
+            nav_courses: "\u8bfe\u7a0b",
         }
     };
 
@@ -867,8 +1101,8 @@
             "zh": "视频生成"
         },
         "fullDesc": {
-            "en": "Runway is the world's leading AI creative platform. Its Gen-4.5 model represents the cutting edge of AI video generation, supporting text-to-video, image-to-video, and video-to-video modes with professional editing features through its Aleph editor. Widely used in filmmaking, advertising, and content creation. Valued at $5.3 billion. G2 rating: 4.5/5.",
-            "zh": "Runway是全球领先的AI创意工具平台，其Gen-4.5模型代表了当前AI视频生成的最高水平，支持文本到视频、图像到视频、视频到视频等多种生成模式，通过Aleph编辑器提供专业的视频编辑功能。被广泛应用于电影制作、广告创意、内容创作等领域。估值53亿美元。G2评分：4.5/5。"
+            "en": "Runway, founded in 2018 by three NYU Tisch graduates, is a pioneer in AI video generation. Its flagship Gen-4.5 model uses a novel Autoregressive-to-Diffusion (A2D) architecture combining Qwen2.5-VL's scene understanding with diffusion-based pixel rendering, topping Artificial Analysis with 1,247 Elo. The complete suite includes text/image-to-video, inpainting, motion brush, GVFX, Runway Agent (conversational AI creator), and Aleph 2.0 editor. ARR ~$340M, valued at $5.3B.",
+            "zh": "Runway由三位NYU Tisch毕业生于2018年创立，是AI视频生成先行者。旗舰模型Gen-4.5采用Autoregressive-to-Diffusion（A2D）架构，以1,247 Elo登顶Artificial Analysis，超越Google Veo 3和OpenAI Sora 2 Pro。完整创作套件包括文/图生视频、内修补、运动画笔、GVFX特效、Runway Agent对话式创作伙伴和Aleph 2.0编辑工作面。年化收入约3.4亿美元，估值53亿美元。"
         },
         "features": {
             "en": [
@@ -939,6 +1173,46 @@
                 "积分消耗较快",
                 "部分功能学习曲线较陡"
             ]
+        },
+        "bestFor": {
+            "en": "Professional video creators, filmmakers, advertising agencies, serious creators needing studio-grade output",
+            "zh": "专业视频创作者、电影制作人、广告代理商、需要工作室级输出的严肃创作者"
+        },
+        "editorVerdict": {
+            "en": "Runway Gen-4.5 tops AI video quality benchmarks with its A2D architecture delivering unmatched physical realism. The comprehensive creative suite (inpainting, motion brush, GVFX) is the most complete in the market. However, credit consumption is fast, single clips limited to 10 seconds, and the free tier is barely usable.",
+            "zh": "Runway Gen-4.5在AI视频质量基准上暂居榜首，其A2D架构带来的物理真实感和角色一致性是目前市场最强。完整的创作套件也是同赛道中最全面的。但积分消耗速度快（4K更甚）、单片段10秒时长上限、免费版几乎不可用。"
+        },
+        "howItWorks": {
+            "en": [
+                "Visit runwayml.com and sign up — free tier includes 125 credits",
+                "Choose generation mode (text-to-video / image-to-video / video editing)",
+                "Enter prompt or upload reference image, select model (Gen-4.5/Gen-4 Turbo)",
+                "Set camera, duration, resolution parameters, then generate",
+                "Preview and fine-tune in the editor, then export"
+            ],
+            "zh": [
+                "访问runwayml.com注册账户，免费版获得125积分",
+                "选择生成模式（文生视频/图生视频/视频编辑）",
+                "输入提示词或上传参考图像，选择模型（Gen-4.5/Gen-4 Turbo）",
+                "设置运镜、时长、分辨率等参数，点击生成",
+                "在编辑器中预览、微调，导出视频"
+            ]
+        },
+        "latestUpdates": {
+            "en": [
+                "Dec 2025: Gen-4.5 released, tops Artificial Analysis leaderboard",
+                "Feb 2026: $315M Series E funding at $5.3B valuation",
+                "May 2026: Runway Agent, Aleph 2.0 + Edit Studio, GWM-1 released",
+                "May 2026: Gen-4.5 native audio generation launched",
+                "Jun 2026: Cosmos Coalition announced, London HQ opened"
+            ],
+            "zh": [
+                "2025年12月：Gen-4.5发布，登顶Artificial Analysis排行榜",
+                "2026年2月：完成3.15亿美元E轮融资，估值53亿美元",
+                "2026年5月：发布Runway Agent、Aleph 2.0 + Edit Studio、GWM-1",
+                "2026年5月：Gen-4.5原生音频生成与编辑上线",
+                "2026年6月：Cosmos Coalition发布、伦敦总部开设"
+            ]
         }
     },
     {
@@ -955,8 +1229,8 @@
             "zh": "视频生成"
         },
         "fullDesc": {
-            "en": "Jimeng AI (即梦AI) is ByteDance's premier AI video creation platform powered by the Seedance 2.0 model. It supports multimodal input (image, text, audio, video) with breakthrough subject migration technology. Seedance 2.0 achieves cinematic 4K output with native audio generation, and features professional-level shot composition and camera movement. With over 100 million users globally, it offers zero-threshold access through multiple platforms including Jimeng, Doubao, and Xiaoyunque.",
-            "zh": "即梦AI是字节跳动旗下的旗舰AI视频创作平台，搭载Seedance 2.0模型。支持图、文、音、视四维多模态混合输入，突破性的主体迁移技术引发行业关注。Seedance 2.0实现电影级4K输出与原生音频生成，具备专业级分镜调度和运镜能力。全球用户超1亿，可通过即梦、豆包、小云雀等多平台零门槛使用。"
+            "en": "Jimeng AI is ByteDance's core AI video product under Volcano Engine. Seedance 2.0 (Feb 2026) supports hybrid text+image+video+audio input (up to 50 sources), generating 4-15s videos with native audio. Seedance 2.5 (Jun 2026) extends to 30 seconds with native 4K and local frame editing. Revenue reached ~220M RMB monthly by April 2026. Deeply integrated with Douyin ecosystem.",
+            "zh": "即梦AI是字节跳动旗下火山引擎核心AI视频生成产品。Seedance 2.0（2026年2月）支持文本+图片+视频+音频混合输入（最多50份素材），生成4-15秒带原生音频视频。Seedance 2.5（6月）扩展至30秒，原生4K输出。月收入达2.2亿元，与抖音生态深度互通。"
         },
         "features": {
             "en": [
@@ -1029,6 +1303,46 @@
                 "主体迁移有身份验证限制",
                 "部分高级功能需付费"
             ]
+        },
+        "bestFor": {
+            "en": "Chinese content creators, AI short drama teams, e-commerce merchants, enterprise marketing teams, ByteDance ecosystem users",
+            "zh": "中文内容创作者、AI短剧制作团队、电商商家、企业营销团队、需要字节生态联动的用户"
+        },
+        "editorVerdict": {
+            "en": "Seedance 2.0/2.5 leads in multimodal input, cross-shot character consistency, camera control, and native audio. The 50-source reference and 30-second single-shot solve core AI short drama pain points. However, pricing is the highest domestically (~1 RMB/s), free credits limited, 2.5 only for paid members.",
+            "zh": "Seedance 2.0/2.5在多模态输入、角色跨镜头一致性、运镜控制和原生音频四个维度领先国内竞品，50路素材参考和30秒单段直出解决了AI短剧核心痛点。但定价为国内最高（约1元/秒），免费额度有限，2.5仅对付费会员开放。"
+        },
+        "howItWorks": {
+            "en": [
+                "Log in via Douyin/phone on Jimeng website or app",
+                "Select video generation mode (text/image/frame/multimodal)",
+                "Upload materials, enter prompts, choose model (Seedance 2.0/2.5)",
+                "Set video ratio, duration, resolution, then generate",
+                "Preview, optionally import to CapCut for editing"
+            ],
+            "zh": [
+                "通过抖音/手机号登录即梦官网或APP",
+                "选择视频生成模式（文生/图生/首尾帧/多模态）",
+                "上传素材并输入提示词，选择模型（Seedance 2.0/2.5）",
+                "设置视频比例、时长、分辨率等参数，点击生成",
+                "预览结果，可在剪映中一键导入二次编辑"
+            ]
+        },
+        "latestUpdates": {
+            "en": [
+                "Feb 2026: Seedance 2.0 released, igniting creative community",
+                "Mar-Apr 2026: Monthly revenue exceeded 200M RMB",
+                "Jun 2026: Seedance 2.5 released (30s, 50 sources, native 4K)",
+                "Jun 2026: Native 4K video generation launched",
+                "Jul 2026: Seedance 2.5 integrating into CapCut"
+            ],
+            "zh": [
+                "2026年2月7日：Seedance 2.0发布，引爆创作圈",
+                "2026年3-4月：即梦月收入突破2亿元",
+                "2026年6月23日：Seedance 2.5发布（30秒直出、50路素材、原生4K）",
+                "2026年6月24日：即梦AI上线原生4K视频生成",
+                "2026年7月：Seedance 2.5即将集成剪映各端"
+            ]
         }
     },
     {
@@ -1045,8 +1359,8 @@
             "zh": "视频生成"
         },
         "fullDesc": {
-            "en": "Kling is an AI video generation platform by Kuaishou. Version 3.0 introduces groundbreaking 6-cut multi-shot mode (the only tool with this feature), supports up to 3-minute single video clips, and features native audio generation. With 4K native output and 60M+ users, it's one of the most popular AI video tools globally. G2 rating: 4.3/5.",
-            "zh": "Kling是快手科技推出的AI视频生成平台。3.0版本引入突破性6切多镜头模式（唯一支持此功能的工具），单片段最长可达3分钟，并支持原生音频生成。4K原生输出，全球6000万+用户。G2评分：4.3/5。"
+            "en": "Kling is Kuaishou's multimodal video generation model. Kling 3.0's All-in-One architecture supports full-modal text/image/audio/video input/output with multilingual native audio (5+ languages), up to 15s video, intelligent multi-shot narrative, and photo-realistic output. Omni version adds reference generation and custom storyboard. Serves 60M+ creators, 600M+ videos generated, ARR $300M.",
+            "zh": "可灵AI是快手自研的多模态视频生成大模型。Kling 3.0基于All-in-One架构，支持全模态输入输出，多语言原生音频、最长15秒视频、智能多镜头叙事和照片级真实输出。Omni版提供自定义分镜故事板。已服务超6000万创作者，生成超6亿条视频，年化收入突破3亿美元。"
         },
         "features": {
             "en": [
@@ -1117,6 +1431,46 @@
                 "国际访问体验不一",
                 "部分功能有地区限制"
             ]
+        },
+        "bestFor": {
+            "en": "Domestic short video creators, advertising/marketing teams, e-commerce operators, enterprise clients, cost-conscious Chinese users",
+            "zh": "国内短视频创作者、广告营销团队、电商运营、企业客户、追求高性价比的中文用户"
+        },
+        "editorVerdict": {
+            "en": "Kling 3.0's All-in-One architecture and multi-shot narrative lead domestically. 4K native output is an industry first, commercialization ($300M ARR) is fastest among Chinese video models. However, generation has randomness requiring retries, complex narratives still have limitations, and character consistency needs improvement vs Jimeng.",
+            "zh": "可灵3.0的All-in-One架构和多镜头叙事能力在国内领先，4K原生直出是行业首创，商业化进展（年化3亿美元）在国产视频模型中最快。但生成有随机性需多次抽卡，长视频与复杂叙事仍有局限，角色一致性仍需提升。"
+        },
+        "howItWorks": {
+            "en": [
+                "Visit Kling website or download app, register",
+                "Choose mode (text/image/reference generation)",
+                "Enter prompts or upload materials, select model (3.0/3.0 Omni)",
+                "Set duration, resolution, camera parameters, generate",
+                "Preview and download, or integrate via API"
+            ],
+            "zh": [
+                "访问可灵官网或下载APP，注册/登录",
+                "选择生成模式（文生视频/图生视频/参考生成）",
+                "输入提示词或上传素材，选择模型版本",
+                "设置时长、分辨率、运镜参数，点击生成",
+                "预览并下载，或通过API集成到企业工作流"
+            ]
+        },
+        "latestUpdates": {
+            "en": [
+                "Jan/Feb 2026: Kling 3.0 series fully launched",
+                "Apr 2026: Native 4K generation opened to all",
+                "May 2026: App topped App Store in 42 countries",
+                "Jun 2026: Kling 3.0 Turbo and Omni released",
+                "2026 Goal: Revenue to double, compute 26B RMB"
+            ],
+            "zh": [
+                "2026年1-2月：Kling 3.0系列全面上线",
+                "2026年4月：全面开放原生4K视频生成",
+                "2026年5月：独立APP登顶42国App Store总榜",
+                "2026年6月17日：Kling 3.0 Turbo和Omni发布",
+                "2026年目标：收入翻倍，算力投入增至260亿元"
+            ]
         }
     },
     {
@@ -1133,8 +1487,8 @@
             "zh": "视频生成"
         },
         "fullDesc": {
-            "en": "Pika is a San Francisco-based AI video startup known for its user-friendly interface and creative video generation. Pika 2.5 brings improved quality and ease of use. Supports text-to-video, image-to-video with motion brush and inpainting features. 16.4M+ users. G2 rating: 4.2/5.",
-            "zh": "Pika是一家总部位于旧金山的AI视频初创公司，以用户友好的界面和创意视频生成著称。Pika 2.5带来更高质量和更便捷的使用体验。支持文本到视频、图像到视频，以及运动笔刷和修复功能。1640万+用户。G2评分：4.2/5。"
+            "en": "Pika Labs was founded in April 2023 by Stanford AI Lab dropouts. Pika 2.5 supports text/image/video-to-video with native 1080p. Its core differentiator is Pikaffects — 14+ one-click physics effects (Squish, Cake-ify, Melt, Explode) that are the engine behind viral TikTok content no other tool can replicate. ~16.4M users. Entry at just $8/mo with commercial rights.",
+            "zh": "Pika Labs由斯坦福AI实验室辍学生于2023年创立。Pika 2.5支持文/图/视频到视频生成，原生1080p。核心差异化在于Pikaffects——14+种一键物理特效（挤压、蛋糕化、融化、爆炸等），是TikTok/Reels病毒式内容的核心引擎，其他工具均无法复制。覆盖约1640万用户。入门$8/月带商用权。"
         },
         "features": {
             "en": [
@@ -1205,6 +1559,44 @@
                 "输出分辨率较低",
                 "视频时长较短"
             ]
+        },
+        "bestFor": {
+            "en": "Social media creators (TikTok/Reels/Shorts), content marketers, creative workers pursuing fun effects and fast iteration",
+            "zh": "社交媒体创作者（TikTok/Reels/Shorts）、内容营销人员、追求趣味特效和快速迭代的创意工作者"
+        },
+        "editorVerdict": {
+            "en": "Pika is the 'most fun' tool in AI video — Pikaffects physics effects library is unique and irreplaceable. $8/mo entry is the lowest paid tier with commercial rights, 30-90s generation is fastest. However, max 1080p, no 4K, no native music/voice, visual realism weaker than Runway/Veo, and the 13-person team iterates slower than big companies.",
+            "zh": "Pika是AI视频领域'最有趣'的工具——Pikaffects物理特效库独一无二。$8/月是带商用权的最低付费门槛，30-90秒生成速度最快。但最高1080p无4K、无原生音乐/人声、画面真实感弱于Runway和Veo，团队仅13人迭代慢于大厂。"
+        },
+        "howItWorks": {
+            "en": [
+                "Visit pika.art and create account",
+                "Choose generation or editing mode (text/image/Pikaffects)",
+                "Enter prompts or upload materials, select effects",
+                "Click generate — results in 30-90 seconds",
+                "Preview, fine-tune, and export"
+            ],
+            "zh": [
+                "访问pika.art注册账户",
+                "选择生成或编辑模式（文生/图生/Pikaffects等）",
+                "输入提示词或上传素材，选择特效和参数",
+                "点击生成，30-90秒内获得结果",
+                "预览、微调后导出"
+            ]
+        },
+        "latestUpdates": {
+            "en": [
+                "Early 2026: Pika 2.5 released with physics-aware motion",
+                "Apr 2026: PikaStream 1.0 Beta for real-time avatars",
+                "Apr 2026: Scene Director multi-shot planning",
+                "May 2026: Pika iOS app launched"
+            ],
+            "zh": [
+                "2026年初：Pika 2.5发布，新增物理感知运动和原生音频",
+                "2026年4月：PikaStream 1.0 Beta发布",
+                "2026年4月：Scene Director多镜头规划发布",
+                "2026年5月：Pika iOS应用上线"
+            ]
         }
     },
     {
@@ -1221,8 +1613,8 @@
             "zh": "数字人"
         },
         "fullDesc": {
-            "en": "Synthesia is the global leader in enterprise AI avatar video generation, valued at $4 billion. Synthesia 3.0 offers 230+ diverse avatars, supports 140+ languages, and features real-time interactive Video Agents. Trusted by Fortune 500 companies for training, compliance, and internal communications. G2 rating: 4.7/5.",
-            "zh": "Synthesia是全球企业级AI数字人视频生成领导者，估值40亿美元。Synthesia 3.0提供230+多元化数字人，支持140+语言，并推出实时交互式Video Agents。被财富500强企业广泛用于培训、合规和内部沟通。G2评分：4.7/5。"
+            "en": "Synthesia, founded in London 2017, is the global leader in enterprise AI avatar video. Offers 240+ pre-built avatars, 160+ languages, 1000+ AI voices. Users input scripts and generate professional videos in minutes. Focused on enterprise training with interactive videos, SCORM export, course modules, and compliance certifications. 50,000+ teams, 90% Fortune 100. G2: 4.7/5.",
+            "zh": "Synthesia于2017年在伦敦创立，是全球企业级AI数字人视频平台领导者。提供240+预置AI数字人和160+语言/1000+AI声音，用户输入脚本即可生成专业视频。聚焦企业培训，具备交互视频、SCORM导出和合规认证。已被50,000+团队使用，90%财富100强采用。G2评分4.7/5。"
         },
         "features": {
             "en": [
@@ -1293,6 +1685,44 @@
                 "渲染速度8-12分钟/3分钟视频",
                 "创意自由度有限"
             ]
+        },
+        "bestFor": {
+            "en": "Enterprise L&D teams, compliance training personnel, enterprises producing multilingual content at scale, training teams needing SCORM/LMS",
+            "zh": "企业L&D团队、合规培训人员、多语言内容规模化产出的企业、需要SCORM/LMS集成的培训团队"
+        },
+        "editorVerdict": {
+            "en": "Synthesia is the category standard — 50,000+ teams, 90% Fortune 100, SOC 2/ISO 27001/ISO 42001 certifications. However, Studio Avatar costs $1,000/yr extra, SCORM is Enterprise-only, avatar expressiveness trails HeyGen Avatar IV, and it's overly formalized for creative content.",
+            "zh": "Synthesia是品类标杆——50,000+团队、90%财富100强采用、SOC 2/ISO 27001/ISO 42001认证栈。但Studio Avatar年费$1,000、SCORM仅Enterprise、表现力不如HeyGen Avatar IV、对创意内容过于正式。"
+        },
+        "howItWorks": {
+            "en": [
+                "Sign up, choose free or paid plan",
+                "Select or create avatar, choose voice and language",
+                "Enter script, add slides and brand elements",
+                "Set interactive elements (quizzes/branching)",
+                "Export video or SCORM, translate to multiple languages"
+            ],
+            "zh": [
+                "注册账户，选择免费或付费方案",
+                "选择或创建数字人，选择声音和语言",
+                "输入脚本，添加幻灯片和品牌元素",
+                "设置交互元素（测验/分支），预览生成",
+                "导出视频或SCORM包，一键翻译多语言版本"
+            ]
+        },
+        "latestUpdates": {
+            "en": [
+                "2025-2026: $200M Series E (Google Ventures)",
+                "2026: Interactive Agents deployed (real-time avatars)",
+                "2026: Express voice engines, AI Playground with Veo 3.1/Sora 2",
+                "2026: Free plan (10min/mo), Starter $18/mo"
+            ],
+            "zh": [
+                "2025-2026年：完成2亿美元E轮融资",
+                "2026年：部署首批交互式Agent（实时对话数字人）",
+                "2026年：Express语音引擎，AI Playground集成Veo 3.1和Sora 2",
+                "2026年：新增免费方案（10分钟/月），Starter $18/月"
+            ]
         }
     },
     {
@@ -1309,8 +1739,8 @@
             "zh": "数字人"
         },
         "fullDesc": {
-            "en": "HeyGen is the fastest-growing AI avatar platform, recognized for highly realistic avatars and the best lip-sync technology in the industry. Avatar IV enables instant avatar cloning in just 2 minutes. Supports text-to-video, video translation, and avatar livestreaming. G2 rating: 4.8/5 (highest among avatar tools), Trustpilot: 3.2/5.",
-            "zh": "HeyGen是增长最快的AI数字人平台，以高度逼真的数字人和业界最佳唇形同步技术著称。Avatar IV支持2分钟即时创建个人数字分身。支持文本转视频、视频翻译、数字人直播。G2评分：4.8/5（数字人工具中最高），Trustpilot：3.2/5。"
+            "en": "HeyGen, founded 2020, is the fastest-growing AI avatar platform (G2 2025). Avatar IV is the most realistic AI avatar on the market. Key differentiator is video translation — dubbing to 175+ languages with voice cloning and lip-sync. Generated 123M+ videos for 100,000+ teams. G2: 4.8/5.",
+            "zh": "HeyGen于2020年创立，被G2评为2025年增长最快产品。Avatar IV是目前最逼真的AI数字人。核心差异化在于视频翻译——将任何视频配音为175+语言，保持声音克隆和唇形同步。已为100,000+团队生成超1.23亿视频。G2评分4.8/5。"
         },
         "features": {
             "en": [
@@ -1381,6 +1811,46 @@
                 "Trustpilot评分仅3.2/5",
                 "免费额度极少"
             ]
+        },
+        "bestFor": {
+            "en": "Global/multinational brand marketing teams, sales teams, content creators, teams needing large-scale multilingual video localization",
+            "zh": "全球/跨国品牌营销团队、销售团队、内容创作者、需要大规模多语言视频本地化的团队"
+        },
+        "editorVerdict": {
+            "en": "HeyGen's Avatar IV is the most realistic AI avatar — all blind test subjects mistook it for a real person. 175+ language video translation with lip-sync is unmatched. However, Avatar IV consumes 20 credits/min, actual costs 40-60% higher than listed, Trustpilot 2.4/5 reflects service issues.",
+            "zh": "HeyGen的Avatar IV是最逼真的AI数字人——盲测中测试者均误认为真人。175+语言视频翻译+唇形同步是独步市场的杀手级功能。但Avatar IV消耗20积分/分钟，实际成本比标价高40-60%，Trustpilot仅2.4/5。"
+        },
+        "howItWorks": {
+            "en": [
+                "Sign up for HeyGen — no credit card needed",
+                "Choose avatar (preset/Photo/Digital Twin) or use Video Agent",
+                "Enter script, select voice and language",
+                "Set gestures, expressions, brand elements, generate",
+                "Preview, export, or translate via AI dubbing"
+            ],
+            "zh": [
+                "注册HeyGen，免费版无需信用卡",
+                "选择数字人（预置/Photo Avatar/Digital Twin）",
+                "输入脚本，选择声音和语言",
+                "设置手势、表情和品牌元素，点击生成",
+                "预览后导出，或AI配音翻译为多语言版本"
+            ]
+        },
+        "latestUpdates": {
+            "en": [
+                "Mid 2025: Avatar IV engine released",
+                "Feb 2026: Unlimited AI dubbing on paid plans",
+                "2026: LiveAvatar real-time interactive avatars",
+                "2026: MCP server and HeyGen Skills for AI Agents",
+                "2026: Video Agent 2.0, Interactive Video + SCORM"
+            ],
+            "zh": [
+                "2025年中：Avatar IV引擎发布",
+                "2026年2月：AI配音在所有付费方案不限量",
+                "2026年：LiveAvatar实时交互数字人上线",
+                "2026年：MCP服务器和HeyGen Skills发布",
+                "2026年：Video Agent 2.0、Interactive Video + SCORM"
+            ]
         }
     },
     {
@@ -1397,8 +1867,8 @@
             "zh": "视频生成"
         },
         "fullDesc": {
-            "en": "Dream Machine by Luma AI features the Ray3 model with impressive capabilities including 4K upscale with HDR 16-bit output and up to 120fps generation. Praised for excellent physics simulation and natural motion. Luma AI has deep expertise in 3D reconstruction and NeRF technology. 25M+ users. G2 rating: 4.4/5.",
-            "zh": "Dream Machine是Luma AI推出的视频生成平台，Ray3模型支持4K放大+HDR 16-bit输出和最高120帧生成。以出色的物理模拟和自然运动获得好评。Luma AI在3D重建和NeRF技术方面积累深厚。2500万+用户。G2评分：4.4/5。"
+            "en": "Luma AI's Dream Machine with Ray3.2 model differentiates with cinematic motion quality and lighting consistency. Supports multi-keyframe control (up to 16), Modify Video V2 (20s 1080p editing), HDR 16-bit EXR export (ACES2065-1), Uni-1 Brand Intelligence, and unified creative canvas. Professional API available.",
+            "zh": "Luma AI的Dream Machine（Ray3.2模型）差异化在于电影级运动质量和光照一致性。支持多关键帧控制（最多16个）、Modify Video V2（20秒视频修改）、HDR 16bit EXR导出（ACES2065-1色彩空间）、Uni-1品牌智能和统一创作画布。提供专业级API。"
         },
         "features": {
             "en": [
@@ -1469,6 +1939,42 @@
                 "社区规模较小",
                 "无标准联盟计划"
             ]
+        },
+        "bestFor": {
+            "en": "Creators pursuing cinematic quality, architecture/real estate visualization, VFX workflows needing HDR professional output",
+            "zh": "追求画面美感和电影质感的创作者、建筑/房地产视觉化、需要HDR专业输出的VFX/合成工作流"
+        },
+        "editorVerdict": {
+            "en": "Luma Dream Machine has unique advantages in cinematic motion, lighting consistency, and HDR output. Image-to-video motion realism is a highlight. However, no native audio, no free video quota, unfriendly credits, and Ray3.14 removing character consistency is a significant regression.",
+            "zh": "Luma Dream Machine在电影级运动质量、光照一致性和HDR专业输出方面有独特优势。但无原生音频、无免费视频额度、积分制不友好、Ray3.14移除角色一致性是明显退步。"
+        },
+        "howItWorks": {
+            "en": [
+                "Visit lumalabs.ai and sign up",
+                "Choose mode (text/image/video modify)",
+                "Enter prompts, set keyframes and camera parameters",
+                "Select resolution and color mode, generate",
+                "Preview in editor or export EXR for compositing"
+            ],
+            "zh": [
+                "访问lumalabs.ai注册账户",
+                "选择生成模式（文生/图生/视频修改）",
+                "输入提示词，设置关键帧和运镜参数",
+                "选择分辨率和色彩模式，点击生成",
+                "在编辑器中微调或导出EXR用于后期合成"
+            ]
+        },
+        "latestUpdates": {
+            "en": [
+                "2025-2026: Ray3.2 with multi-keyframe and Modify Video V2",
+                "2026: Uni-1 Brand Intelligence, unified canvas",
+                "2026: Forward Deployed Creatives enterprise service"
+            ],
+            "zh": [
+                "2025-2026年：Ray3.2发布，多关键帧和Modify Video V2",
+                "2026年：Uni-1品牌智能、统一创作画布发布",
+                "2026年：Forward Deployed Creatives企业服务上线"
+            ]
         }
     },
     {
@@ -1485,8 +1991,8 @@
             "zh": "综合平台"
         },
         "fullDesc": {
-            "en": "InVideo is a comprehensive online video platform with 5000+ professional templates and AI video assistant. Supports text-to-video with built-in AI writing, voiceover, and image generation. Over 50 million users worldwide. G2 rating: 4.5/5, Trustpilot: 1.3/5 (significant discrepancy — billing disputes and customer service complaints).",
-            "zh": "InVideo是一个功能全面的在线视频制作平台，提供超过5000个专业模板和AI视频助手。支持从文本脚本直接生成视频，内置AI写作、AI配音、AI图像等功能。全球超过5000万用户。G2评分：4.5/5，Trustpilot：1.3/5（差异显著——计费争议和客服投诉较多）。"
+            "en": "InVideo is an AI video editing and generation platform for YouTube/social media creators. First to integrate Sora 2 (Oct 2025), then Veo 3.1, giving top-tier generation at $25/mo. Excels at faceless YouTube channels — input topic, AI generates scripts, footage, narration, subtitles. 50M+ users, 4.7/5 rating.",
+            "zh": "InVideo是面向YouTube/社交媒体创作者的AI视频编辑平台。率先集成Sora 2（2025年10月）和Veo 3.1，以$25/月获得顶级生成能力。特别适合无脸YouTube频道——输入主题，AI自动生成脚本、画面、旁白、字幕。超5000万用户。"
         },
         "features": {
             "en": [
@@ -1557,6 +2063,42 @@
                 "计费争议投诉多",
                 "AI生成质量一般"
             ]
+        },
+        "bestFor": {
+            "en": "YouTube and social media creators, faceless channel operators, UGC ad teams, budget-conscious creators needing top AI capability",
+            "zh": "YouTube和社交媒体创作者、无脸频道运营者、UGC广告团队、预算有限但需顶级AI能力的创作者"
+        },
+        "editorVerdict": {
+            "en": "InVideo offers exceptional value at $25/mo integrating Sora 2 + Veo 3.1, Express Avatar and UGC creation are practical for social media. However, credit system is unintuitive, editor less flexible than professional NLEs, generation depends on underlying models.",
+            "zh": "InVideo以$25/月集成Sora 2+Veo 3.1是极高性价比入门方式，Express Avatar和UGC创作实用。但积分体系不直观、编辑器不如专业NLE灵活、生成质量取决于底层模型。"
+        },
+        "howItWorks": {
+            "en": [
+                "Sign up for InVideo",
+                "Choose mode (AI generation/template/blank)",
+                "Enter topic, AI auto-generates video draft",
+                "Adjust visuals, voiceover, subtitles",
+                "Preview, export, share to YouTube/social media"
+            ],
+            "zh": [
+                "注册InVideo账户",
+                "选择创作模式（AI生成/模板/空白）",
+                "输入主题，AI自动生成视频草稿",
+                "在编辑器中调整画面、配音、字幕",
+                "预览并导出，分享至YouTube/社交媒体"
+            ]
+        },
+        "latestUpdates": {
+            "en": [
+                "Oct 2025: First to integrate Sora 2",
+                "2025-2026: Integrated Veo 3.1, Express Avatar, UGC ads",
+                "2026: Continued AI iteration and template expansion"
+            ],
+            "zh": [
+                "2025年10月：率先集成Sora 2",
+                "2025-2026年：集成Veo 3.1，新增Express Avatar和UGC广告",
+                "2026年：持续迭代AI生成能力和模板库"
+            ]
         }
     },
     {
@@ -1573,8 +2115,8 @@
             "zh": "视频生成"
         },
         "fullDesc": {
-            "en": "PixVerse is a fast-growing AI video platform with over 100 million users. PixVerse V6 brings 4K output and native audio generation. Known for diverse artistic styles and excellent output quality. Backed by $300M Series C funding led by Alibaba. One of the best affiliate programs available (30-35% recurring + 90-day cookie).",
-            "zh": "PixVerse是增长极快的AI视频平台，全球用户超过1亿。PixVerse V6带来4K输出和原生音频生成。以多样化的艺术风格和出色的输出质量著称。获得阿里巴巴领投的3亿美元C轮融资。联盟计划优秀（30-35%循环佣金+90天Cookie）。"
+            "en": "PixVerse by Singapore's AISphere (founded 2023). V6 (Mar 2026) supports 15s 1080p generation, 20+ cinematic camera controls, multi-shot engine (auto wide/medium/close-up), native audio, and developer CLI. Core breakthrough: complete multi-shot sequences from single prompt — no manual stitching. From $10/mo.",
+            "zh": "PixVerse由新加坡AISphere开发（2023年创立）。V6（2026年3月）支持15秒1080p、20+运镜控制、多镜头引擎（自动宽/中/特写过渡）、原生音频和开发者CLI。核心突破：单次提示词生成完整多镜头序列。$10/月起。"
         },
         "features": {
             "en": [
@@ -1645,6 +2187,42 @@
                 "英文文档不足",
                 "评分未公开"
             ]
+        },
+        "bestFor": {
+            "en": "Short video creators (TikTok/Reels/Shorts), advertising teams, indie filmmakers, developer teams, e-commerce video makers",
+            "zh": "短视频创作者（TikTok/Reels/Shorts）、广告团队、独立电影制作人、开发者团队、电商视频制作"
+        },
+        "editorVerdict": {
+            "en": "PixVerse V6 stands out with 15s multi-shot sequences + native audio + 20+ camera controls at competitive price. Generation speed is among fastest (30s-2min). However, max 1080p, character consistency still weaker than Runway/Seedance, brand features less mature than Luma Uni-1.",
+            "zh": "PixVerse V6以15秒多镜头序列+原生音频+20+运镜在同价位表现突出，生成速度最快之一（30秒-2分钟）。但最高1080p、角色一致性弱于Runway/Seedance、品牌功能不如Luma成熟。"
+        },
+        "howItWorks": {
+            "en": [
+                "Visit pixverse.ai and sign up",
+                "Enter prompt, select V6 model and parameters",
+                "Set camera, duration, audio options",
+                "Click generate — 30s to 2min",
+                "Preview, export, or integrate via API/CLI"
+            ],
+            "zh": [
+                "访问pixverse.ai注册账户",
+                "输入提示词，选择V6模型和参数",
+                "设置运镜、时长、音频选项",
+                "点击生成，等待30秒-2分钟",
+                "预览导出，或通过API/CLI集成自动化"
+            ]
+        },
+        "latestUpdates": {
+            "en": [
+                "Mar 2026: V6 released — 15s multi-shot + native audio",
+                "2026: V6 CLI developer integration",
+                "2026: R1 real-time streaming video model"
+            ],
+            "zh": [
+                "2026年3月30日：V6发布，15秒多镜头+原生音频",
+                "2026年：V6 CLI开发者集成上线",
+                "2026年：R1实时交互流式视频模型发布"
+            ]
         }
     },
     {
@@ -1661,8 +2239,8 @@
             "zh": "视频生成"
         },
         "fullDesc": {
-            "en": "Vidu is an AI video generation model co-developed by Shengshu Technology and Tsinghua University. As a Chinese original, Vidu excels in multi-shot storytelling and character consistency. The Q3 version introduces native audio generation (Beta). Supports text-to-video, image-to-video, and reference video modes with up to 16-second HD video generation.",
-            "zh": "Vidu是由生数科技与清华大学联合研发的AI视频生成大模型。作为中国原创的视频生成模型，Vidu在多镜头叙事、角色一致性方面表现出色。Q3版本引入原生音频生成（Beta阶段）。支持文本到视频、图像到视频、参考视频生成等多种模式，支持最长16秒高清视频生成。"
+            "en": "Vidu by Shengshu Technology (founded by Tsinghua's Prof. Zhu Jun). U-ViT architecture predates DiT. Rapidly iterated through Q1-Q3 (#1 China). Vidu S1 (Jul 2026) uses AR+Diffusion streaming for real-time voice-driven animation, infinite interaction, single-image digital human. 200+ countries, 40M+ creators.",
+            "zh": "Vidu由生数科技开发（清华朱军教授团队创立）。底层U-ViT架构先于DiT约3个月。经历Q1-Q3快速迭代（中国第一）。2026年7月Vidu S1采用AR+Diffusion流式架构实现实时交互。覆盖200+国家、4000万+创作者。"
         },
         "features": {
             "en": [
@@ -1733,6 +2311,46 @@
                 "音频仍在Beta阶段",
                 "海外访问可能受限"
             ]
+        },
+        "bestFor": {
+            "en": "Chinese creators, AI short drama/animation teams, enterprises needing real-time interactive digital humans, cost-conscious creators",
+            "zh": "中国创作者、AI短剧/动画团队、需要实时交互数字人的企业（直播/虚拟陪伴）、追求性价比的创作者"
+        },
+        "editorVerdict": {
+            "en": "Vidu Q3 ranks #1 in China on Artificial Analysis. But the truly remarkable is Vidu S1 — AR+Diffusion streaming enables real-time interaction, a paradigm shift from offline to real-time conversation. However, brand awareness trails Kling/Jimeng, ecosystem integration limited.",
+            "zh": "Vidu Q3排名中国第一。真正令人瞩目的是Vidu S1——AR+Diffusion流式架构实现实时交互，从'离线生产'到'实时对话'的范式突破。但品牌知名度弱于可灵/即梦，生态整合度有限。"
+        },
+        "howItWorks": {
+            "en": [
+                "Visit vidu.cn and sign up",
+                "Choose mode (text/image/reference) or Vidu Agent",
+                "Enter prompts and references, set parameters",
+                "Generate and preview",
+                "Export or iterate in Reference Hub"
+            ],
+            "zh": [
+                "访问vidu.cn注册账户",
+                "选择生成模式或Vidu Agent",
+                "输入提示词和参考素材，设置参数",
+                "点击生成，预览结果",
+                "导出或在Reference Hub中迭代"
+            ]
+        },
+        "latestUpdates": {
+            "en": [
+                "Mar 2025: Q1 released (48kHz audio)",
+                "Oct 2025: Q2 released (7-image reference)",
+                "Jan 2026: Q3 #1 China, #2 global",
+                "Apr 2026: Q3 launched (16s synchronized)",
+                "Jul 2026: Vidu S1 real-time interactive model"
+            ],
+            "zh": [
+                "2025年3月：Q1发布（48kHz同步音频）",
+                "2025年10月：Q2发布（7图参考）",
+                "2026年1月：Q3排名中国第一、全球第二",
+                "2026年4月：Q3正式上线",
+                "2026年7月：Vidu S1实时交互视频模型发布"
+            ]
         }
     },
     {
@@ -1749,8 +2367,8 @@
             "zh": "视频编辑"
         },
         "fullDesc": {
-            "en": "Pictory is an AI video tool focused on content transformation. Its standout feature is automatically converting blog posts and scripts into illustrated videos. Supports auto subtitles, video summarization, brand kits, and more. Perfect for content marketers, bloggers, and educators. G2 rating: 4.4/5. Offers one of the best affiliate programs (20-50% tiered + 99-day cookie).",
-            "zh": "Pictory是一款专注于内容转换的AI视频工具，最大特色是可以将博客文章、脚本文本自动转换为带配图的视频。支持自动字幕生成、视频摘要、品牌套件等功能。特别适合内容营销人员、博主和教育工作者。G2评分：4.4/5。联盟计划优秀（20-50%阶梯+99天Cookie）。"
+            "en": "Pictory converts blog posts, scripts, and recordings into polished short videos with 18M+ Getty Images/Storyblocks stock, AI voiceover (ElevenLabs), and subtitles. Pictory 2.0 (Mar 2026) unifies full workflow. Unique: text-driven editing — edit transcript to edit video. From $19/mo.",
+            "zh": "Pictory将博客文章、脚本和长视频转化为精修短视频，提供1800万+Getty Images/Storyblocks素材库，AI配音（ElevenLabs）。Pictory 2.0（2026年3月）整合全流程。独特优势：编辑转录文本即可编辑视频。$19/月起。"
         },
         "features": {
             "en": [
@@ -1821,6 +2439,42 @@
                 "AI配图质量一般",
                 "高级功能需高级版本"
             ]
+        },
+        "bestFor": {
+            "en": "Content marketers, bloggers, course creators, faceless YouTube operators, teams needing large-scale text-to-video",
+            "zh": "内容营销人员、博主、课程创作者、无脸YouTube运营者、需要大规模文字转视频的团队"
+        },
+        "editorVerdict": {
+            "en": "Pictory is best for 'blog/script-to-video' — text-driven editing and 18M+ stock library is extremely efficient, $25/mo for 200 min is best value. However, max 1080p, no free tier, matching accuracy ~50% for abstract topics, AI generation features don't match professional models.",
+            "zh": "Pictory在'博客/脚本转视频'赛道上是最佳工具——文本驱动编辑和1800万+素材库效率极高，$25/月200分钟性价比最优。但最高1080p、无免费版、素材匹配对抽象主题准确率仅~50%。"
+        },
+        "howItWorks": {
+            "en": [
+                "Sign up for Pictory (14-day trial)",
+                "Choose method (URL/script-to-video/upload)",
+                "AI extracts points, matches footage, generates voice",
+                "Adjust text/visuals/voiceover/subtitles",
+                "Set brand, export video or SCORM"
+            ],
+            "zh": [
+                "注册Pictory（14天试用）",
+                "选择创作方式（URL/脚本/上传录制）",
+                "AI提取要点、匹配素材、生成配音",
+                "在编辑器中调整文本/画面/配音",
+                "设置品牌元素，导出视频或SCORM包"
+            ]
+        },
+        "latestUpdates": {
+            "en": [
+                "Jan 2026: AI avatars and prompt/image-to-video",
+                "Mar 2026: Pictory 2.0 (mobile, chapters, 4K, audio)",
+                "2026: Timeline response ~800ms→~200ms"
+            ],
+            "zh": [
+                "2026年1月：新增AI数字人和视频生成",
+                "2026年3月：Pictory 2.0发布（移动端、章节、4K）",
+                "2026年：时间线响应速度提升至~200ms"
+            ]
         }
     },
     {
@@ -1837,8 +2491,8 @@
             "zh": "视频编辑"
         },
         "fullDesc": {
-            "en": "FlexClip is a feature-rich online video editor combining AI assistance with professional templates. Offers AI text-to-speech, AI image generation, AI script writing, and more with a drag-and-drop interface. The lowest entry price among similar tools at $9.99/mo. G2 rating: 4.6/5, Capterra: 4.5/5.",
-            "zh": "FlexClip是一款功能丰富的在线视频编辑器，结合了AI辅助功能和大量专业模板。提供AI文本转语音、AI图片生成、AI脚本生成等功能，配合拖拽式编辑界面。同类工具中最低入门价格$9.99/月。G2评分：4.6/5，Capterra：4.5/5。"
+            "en": "FlexClip is an AI-driven online video editor with 6000+ templates, 4M+ stock, 74K+ music. 2026 AI includes video generator (Hailuo/Kling/Veo 3), AI Long to Shorts, and Magic Edit engine. 5M+ users, 10M+ downloads. Free to Business $19.99/mo.",
+            "zh": "FlexClip是AI驱动在线视频编辑器，6000+模板、400万+素材、74000+音乐。2026年AI能力包括视频生成器（Hailuo/Kling/Veo 3）、AI Long to Shorts和Magic Edit引擎。500万+用户。免费版至Business $19.99/月。"
         },
         "features": {
             "en": [
@@ -1909,6 +2563,42 @@
                 "高级定制有限",
                 "免费版有水印"
             ]
+        },
+        "bestFor": {
+            "en": "Social media managers, digital marketers, education content creators, small business owners, video editing beginners",
+            "zh": "社交媒体经理、数字营销人员、教育内容创作者、小企业主、视频编辑初学者"
+        },
+        "editorVerdict": {
+            "en": "FlexClip is a top entry-level online editor — 6000+ templates + 4M+ stock + 74K music, Magic Edit one-click editing, $11.99/mo is attractive. However, single-track timeline limits complex editing, slow exports, restrictive free tier, needs internet.",
+            "zh": "FlexClip是入门级在线编辑最佳选择——6000+模板+400万+素材+74000+音乐、Magic Edit一键编辑、$11.99/月极具吸引力。但单轨时间线限制复杂编辑、导出慢、免费版限制严、需联网。"
+        },
+        "howItWorks": {
+            "en": [
+                "Visit flexclip.com and sign up",
+                "Choose template or start from blank/AI",
+                "Upload or use built-in library, drag to timeline",
+                "Enhance with AI tools (subtitles/translation)",
+                "Export or share directly to social media"
+            ],
+            "zh": [
+                "访问flexclip.com注册",
+                "选择模板或从空白/AI生成器开始",
+                "上传素材或使用内置库，拖放至时间线",
+                "使用AI工具增强（字幕/翻译/背景移除）",
+                "导出或直接分享至社交媒体"
+            ]
+        },
+        "latestUpdates": {
+            "en": [
+                "Jan 2026: Magic Edit (Auto Edit + AI Recreate)",
+                "May 2026: AI Long to Shorts (Viral Score)",
+                "2026: AI generator integrated Veo 3.1/Kling/Hailuo"
+            ],
+            "zh": [
+                "2026年1月：Magic Edit发布（Auto Edit + AI Recreate）",
+                "2026年5月：AI Long to Shorts（Viral Score）",
+                "2026年：AI视频生成器集成Veo 3.1/Kling/Hailuo"
+            ]
         }
     },
     {
@@ -1925,8 +2615,8 @@
             "zh": "视频生成"
         },
         "fullDesc": {
-            "en": "Google Veo 3 is the only AI video tool that natively supports 48kHz stereo audio alongside 4K resolution and 60fps generation — a unique combination no other tool offers. Achieved 72% human preference rate in blind tests. Features SynthID watermarking for content authenticity. Part of Google's AI ecosystem with Vertex API access. However, full Veo 3 access requires the Ultra tier at $249.99/mo, making it the most expensive option.",
-            "zh": "Google Veo 3是唯一一款同时原生支持48kHz立体声音频、4K分辨率和60fps生成的AI视频工具——这一组合其他工具均无法实现。在盲测中获得72%人类偏好率。搭载SynthID水印确保内容真实性。属于Google AI生态系统，提供Vertex API接入。但完整Veo 3功能需要Ultra订阅（$249.99/月），是最昂贵的选择。"
+            "en": "Google Veo 3 (May 2025) differentiates with native synchronized audio — rendering video and audio (dialogue, effects, ambient) simultaneously at 48kHz stereo broadcast quality. Veo 3.1 adds scene expansion, image reference, 1-min+ videos. Free Google Ads integration since Feb 2026. SynthID watermark. AI Pro $19.99/mo or Ultra $249.99/mo.",
+            "zh": "Google Veo 3（2025年5月）核心差异化是原生同步音频——在模型层面同时渲染视频和音频（对白、音效、环境声），48kHz立体声广播级。Veo 3.1增加场景扩展和图像参考。2026年2月免费集成Google Ads。SynthID水印。AI Pro $19.99/月或Ultra $249.99/月。"
         },
         "features": {
             "en": [
@@ -1997,6 +2687,46 @@
                 "无联盟计划",
                 "需要Google AI Pro订阅"
             ]
+        },
+        "bestFor": {
+            "en": "Advertisers (especially Google Ads), content creators, teams needing audio-video sync, Google ecosystem users, developers",
+            "zh": "广告商（Google Ads用户）、内容创作者、需要音画同步的团队、Google生态用户、开发者"
+        },
+        "editorVerdict": {
+            "en": "Veo 3's native audio is its killer feature — dialogue + sound effects + ambient in one output, leading lip-sync. Free Google Ads integration is game-changing. However, 8s limit, $249.99/mo AI Ultra, non-standalone (requires Gemini), visual quality slightly behind Gen-4.5.",
+            "zh": "Veo 3的原生音频是杀手级特性——对白+音效+环境声一次输出，唇形同步精度领先。免费集成Google Ads更是降维打击。但8秒限制、$249.99/月AI Ultra、非独立产品、视觉质量略逊Gen-4.5。"
+        },
+        "howItWorks": {
+            "en": [
+                "Access Veo 3 via Gemini or AI Studio",
+                "Enter video description with dialogue and sound effects",
+                "Optionally upload reference images",
+                "Set duration/ratio/quality, generate",
+                "Preview, edit in Google Flow if needed"
+            ],
+            "zh": [
+                "通过Gemini或AI Studio访问Veo 3",
+                "输入视频描述（含角色对白和音效）",
+                "可选择上传参考图像",
+                "设置时长/比例/质量档位，点击生成",
+                "预览结果，可在Google Flow中编辑"
+            ]
+        },
+        "latestUpdates": {
+            "en": [
+                "May 2025: Veo 3 at Google I/O",
+                "Sep 2025: Veo 3.1 (expansion/reference/longer)",
+                "Feb 2026: Free Google Ads integration",
+                "Apr 2026: Veo 3.1 Lite released",
+                "May 2026: Gemini Omni Flash"
+            ],
+            "zh": [
+                "2025年5月：Veo 3在Google I/O发布",
+                "2025年9月：Veo 3.1发布（场景扩展/图像参考）",
+                "2026年2月：免费集成Google Ads Asset Studio",
+                "2026年4月：Veo 3.1 Lite模型发布",
+                "2026年5月：Gemini Omni Flash发布"
+            ]
         }
     },
     {
@@ -2013,8 +2743,8 @@
             "zh": "综合平台"
         },
         "fullDesc": {
-            "en": "Adobe Firefly Video is the only commercially safe AI video platform, trained on 100% licensed data with full IP protection. Its unique multi-model hub lets you switch between Kling, Veo, Sora, and Luma models in one interface. Deep integration with Adobe Creative Cloud makes it ideal for professional workflows. 30M+ Creative Cloud users. Offers 85% first-month affiliate commission.",
-            "zh": "Adobe Firefly Video是唯一商用安全认证的AI视频平台，使用100%授权数据训练，提供完整IP保护。其独特的多模型聚合功能支持在一个界面中切换Kling、Veo、Sora和Luma模型。与Adobe Creative Cloud深度集成，是专业工作流的理想选择。3000万+Creative Cloud用户。提供85%首月联盟佣金。"
+            "en": "Adobe Firefly Video extends generative AI into video within the Creative Cloud ecosystem. Key differentiator: enterprise-grade IP indemnification on eligible plans. Training data entirely from Adobe Stock licensed content. Features include text/image-to-video, generative fill, style transfer, camera control. Included in CC subscriptions from $9.99/mo.",
+            "zh": "Adobe Firefly Video将Firefly生成式AI扩展到视频领域，深度集成Creative Cloud。差异化在于企业级IP赔偿保障。训练数据全部来自Adobe Stock公开授权内容。包含文/图生视频、生成式填充、风格迁移和镜头控制。Creative Cloud订阅$9.99/月起。"
         },
         "features": {
             "en": [
@@ -2085,6 +2815,42 @@
                 "无CC时独立功能有限",
                 "AI指令遵循一般"
             ]
+        },
+        "bestFor": {
+            "en": "Adobe Creative Cloud users, enterprise compliance teams, brand owners needing IP indemnification, professional post-production teams",
+            "zh": "Adobe Creative Cloud用户、企业合规团队、需要IP赔偿保障的品牌方、专业视频后期团队"
+        },
+        "editorVerdict": {
+            "en": "Adobe Firefly Video's biggest value is IP indemnification and copyright-clean Adobe Stock training data — irreplaceable for brands and compliance. Deep Premiere Pro/AE integration means seamless workflow. However, generation quality and flexibility lag Runway/Veo/Kling, iteration is slower than startups.",
+            "zh": "Adobe Firefly Video最大卖点是IP赔偿保障和Adobe Stock训练数据版权清洁——对品牌方不可替代。Premiere Pro/AE深度集成意味着无缝工作流。但生成质量和灵活性仍落后于AI原生平台，迭代慢于创业公司。"
+        },
+        "howItWorks": {
+            "en": [
+                "Log in to Adobe Creative Cloud",
+                "Open Firefly panel in Premiere Pro or Firefly Boards",
+                "Enter description or upload reference image",
+                "Generate — output appears on timeline",
+                "Continue editing in Premiere Pro, export"
+            ],
+            "zh": [
+                "登录Adobe Creative Cloud账户",
+                "在Premiere Pro中打开Firefly面板",
+                "输入描述或上传参考图像",
+                "生成 — AI输出直接出现在时间线",
+                "在Premiere Pro中继续编辑和导出"
+            ]
+        },
+        "latestUpdates": {
+            "en": [
+                "2025-2026: Firefly Video integrated into Premiere Pro",
+                "2026: Expanding video generation and editing",
+                "2026: Deeper CC integration, After Effects support"
+            ],
+            "zh": [
+                "2025-2026年：Firefly Video逐步集成到Premiere Pro",
+                "2026年：持续扩展视频生成和编辑能力",
+                "2026年：与Creative Cloud更深整合，支持After Effects"
+            ]
         }
     },
     {
@@ -2101,8 +2867,8 @@
             "zh": "视频生成"
         },
         "fullDesc": {
-            "en": "Hailuo AI (海螺AI) is an AI video tool by MiniMax, one of China's leading AI companies (HKEX listed, $11.5B market cap). With 236M+ users, it offers exceptional value for money with strong physics simulation capabilities. Supports text-to-video, image-to-video, and 1080P output with API access. A rising star in the budget-friendly AI video segment.",
-            "zh": "海螺AI是MiniMax（稀宇科技）推出的AI视频工具，MiniMax是中国领先的AI公司之一（港交所上市，市值115亿美元）。拥有2.36亿+用户，性价比极高，物理模拟能力出色。支持文本到视频、图像到视频、1080P输出和API接入。是平价AI视频领域的后起之秀。"
+            "en": "Hailuo AI is MiniMax Group's consumer video product. MiniMax IPO'd on HKEX Jan 2026 ($619M, $4B valuation). Flagship Hailuo 2.3 uses 456B parameter MoE architecture, ranking #1 on WorldModelBench. 1080p/10s output, 30-90s generation. Model series includes T2V, I2V, Director, S2V, and Media Agent. From free to $9.99/mo.",
+            "zh": "海螺AI是MiniMax集团的消费级视频产品。MiniMax于2026年1月港交所IPO（6.19亿美元，估值40亿美元）。旗舰Hailuo 2.3基于4560亿参数MoE架构，WorldModelBench排名第1。1080p/10秒输出，30-90秒生成。定价$9.99/月起。"
         },
         "features": {
             "en": [
@@ -2173,6 +2939,44 @@
                 "偶有提示不符",
                 "无标准联盟计划"
             ]
+        },
+        "bestFor": {
+            "en": "Anime/animation creators, physics simulation enthusiasts, budget-conscious creators, social short video producers",
+            "zh": "动漫/二次元创作者、物理模拟爱好者、预算有限的创作者、社交短视频制作"
+        },
+        "editorVerdict": {
+            "en": "Hailuo ranks #1 on WorldModelBench for physics simulation and leads in anime creation. 30-90s speed and $9.99/mo are budget-friendly. However, 10s limit, opaque credits (failures still deducted), 1.4/5 Trustpilot, copyright lawsuits, and China data processing are significant risks.",
+            "zh": "Hailuo在WorldModelBench物理模拟排名第1、动漫创作领先。30-90秒速度和$9.99/月价格友好。但10秒限制、积分不透明（失败仍扣）、Trustpilot 1.4/5、版权诉讼和中国数据处理是显著风险。"
+        },
+        "howItWorks": {
+            "en": [
+                "Visit hailuoai.video or download app",
+                "Choose model and mode (text/image)",
+                "Enter prompt or upload image, set parameters",
+                "Click generate (30-90 seconds)",
+                "Preview and export"
+            ],
+            "zh": [
+                "访问hailuoai.video或下载APP",
+                "选择模型和生成模式（文生/图生）",
+                "输入提示词或上传图像，设置参数",
+                "点击生成（30-90秒完成）",
+                "预览并导出"
+            ]
+        },
+        "latestUpdates": {
+            "en": [
+                "Jun 2025: Hailuo 02, #2 on Artificial Analysis I2V",
+                "Oct 2025: Hailuo 2.3, Media Agent",
+                "Jan 2026: MiniMax IPO ($619M)",
+                "Feb 2026: Hailuo 2.3 with anime enhancements"
+            ],
+            "zh": [
+                "2025年6月：Hailuo 02发布，I2V排名第2",
+                "2025年10月：Hailuo 2.3发布，Media Agent上线",
+                "2026年1月：MiniMax港交所IPO（6.19亿美元）",
+                "2026年2月：Hailuo 2.3正式，动漫增强"
+            ]
         }
     },
     {
@@ -2189,8 +2993,8 @@
             "zh": "数字人"
         },
         "fullDesc": {
-            "en": "Colossyan is a London-based AI avatar platform focused on enterprise Learning & Development (L&D). With 300+ digital avatars and the NEO 2 engine, it uniquely offers SCORM export on all paid plans and interactive video with branching and quizzes. Trusted by 35K+ enterprises. One of the best affiliate programs (25-50% recurring + 90-day cookie). G2 rating: 4.6-4.8/5.",
-            "zh": "Colossyan是一家总部位于伦敦的AI数字人平台，专注于企业学习与培训（L&D）。拥有300+数字人和NEO 2引擎，独特之处在于所有付费版均支持SCORM导出，以及支持分支和测验的交互式视频。被35000+企业信任。联盟计划优秀（25-50%循环佣金+90天Cookie）。G2评分：4.6-4.8/5。"
+            "en": "Colossyan is an enterprise training-focused AI avatar platform. Provides 200+ avatars, 80+ languages, 600+ voices, auto-translation to 100+ languages, branching interactive videos, quizzes, SCORM, and LMS integration. NEO 2 engine supports full-body movement and emotional expressions. Signature: branching interactive videos for scenario-based training. SOC 2 Type II and GDPR certified. Free to $70/mo Business.",
+            "zh": "Colossyan是专注企业培训的AI数字人平台。提供200+数字人、80+语言600+声音、自动翻译100+语言、分支交互视频、测验、SCORM和LMS集成。NEO 2引擎支持全身运动和表情。签名功能：分支交互视频用于场景化培训。SOC 2 Type II和GDPR认证。免费版至Business $70/月。"
         },
         "features": {
             "en": [
@@ -2260,6 +3064,44 @@
                 "品牌知名度较低",
                 "NEO 2有时长限制",
                 "非L&D场景适用性有限"
+            ]
+        },
+        "bestFor": {
+            "en": "Enterprise L&D/HR teams, compliance training personnel, organizations needing interactive branching videos and SCORM/LMS, customer service training",
+            "zh": "企业L&D/HR团队、合规培训人员、需要交互分支视频和SCORM/LMS集成的培训组织、客户服务培训"
+        },
+        "editorVerdict": {
+            "en": "Colossyan is top choice for 'training-native AI video' — branching interactive videos + quizzes + SCORM + LMS is unmatched. $70/mo Business with interactive features is best value. However, avatar realism trails HeyGen/Synthesia, slow rendering (~10min/1min video), API Enterprise-only, no HIPAA.",
+            "zh": "Colossyan在'培训原生AI视频'是最佳——分支交互视频+测验+SCORM+LMS组合无可匹敌。$70/月Business方案含交互功能同价位最优。但数字人真实感弱于HeyGen/Synthesia、渲染慢、API仅Enterprise、无HIPAA。"
+        },
+        "howItWorks": {
+            "en": [
+                "Sign up for Colossyan, choose plan",
+                "Enter script or upload document/PPT",
+                "Select avatar, voice, language",
+                "Add interactive branches and quizzes",
+                "Generate, export or integrate via SCORM"
+            ],
+            "zh": [
+                "注册Colossyan，选择方案",
+                "输入脚本或上传文档/PPT",
+                "选择数字人、声音和语言",
+                "添加交互分支和测验（如需）",
+                "生成视频，导出或通过SCORM集成LMS"
+            ]
+        },
+        "latestUpdates": {
+            "en": [
+                "2025: NEO 2 engine, removed industry restrictions",
+                "Feb 2025: Generation speed +33%",
+                "2026: Conversational AI Agent in beta",
+                "2026: Forge engine (2x speed + 1hr videos) announced"
+            ],
+            "zh": [
+                "2025年：NEO 2引擎发布，移除行业限制",
+                "2025年2月：生成速度提升33%",
+                "2026年：对话型数字人进入内测",
+                "2026年：Forge引擎（2倍速度+1小时视频）预告"
             ]
         }
     }
@@ -2380,7 +3222,11 @@
                 <div><div class="modal-title">${tool.name}${tool.discontinued ? '<span class="discontinued-badge">' + (currentLang === 'zh' ? '已关停' : 'Discontinued') + '</span>' : ''}</div><span class="modal-category">${td(tool,'catName')}</span></div>
             </div>
             <div class="modal-section"><h3>${t('modal_overview')}</h3><p>${td(tool,'fullDesc')}</p></div>
+            ${tool.bestFor ? `<div class="modal-section"><h3>${t('modal_bestFor')}</h3><div class="modal-bestfor-tags">${td(tool,'bestFor').split(/[、,，]/).map(tag => `<span class="bestfor-tag">${tag.trim()}</span>`).join('')}</div></div>` : ''}
+            ${tool.editorVerdict ? `<div class="modal-section"><h3>${t('modal_verdict')}</h3><div class="editor-verdict">${td(tool,'editorVerdict')}</div></div>` : ''}
             <div class="modal-section"><h3>${t('modal_features')}</h3><div class="modal-features">${td(tool,'features').map(f => `<div class="modal-feature-item">${f}</div>`).join('')}</div></div>
+            ${tool.howItWorks ? `<div class="modal-section"><h3>${t('modal_howto')}</h3><ol class="howto-steps">${tool.howItWorks[currentLang].map((step, i) => `<li class="howto-step"><span class="step-num">${i+1}</span><span class="step-text">${step}</span></li>`).join('')}</ol></div>` : ''}
+            ${tool.latestUpdates ? `<div class="modal-section"><h3>${t('modal_updates')}</h3><div class="updates-timeline">${tool.latestUpdates[currentLang].map((update, i) => `<div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-text">${update}</span></div>`).join('')}</div></div>` : ''}
             <div class="modal-section"><h3>${t('modal_pricing')}</h3><div class="modal-pricing"><div class="modal-price-main">${tool.pricing}</div><div class="modal-price-desc">${td(tool,'pricingDetail')}</div></div></div>
             <div class="modal-section"><h3>${t('modal_pros')}</h3><ul style="padding-left:20px;color:var(--text-secondary);line-height:2;font-size:14px;">${td(tool,'pros').map(p => `<li>${p}</li>`).join('')}</ul></div>
             <div class="modal-section"><h3>${t('modal_cons')}</h3><ul style="padding-left:20px;color:var(--text-secondary);line-height:2;font-size:14px;">${td(tool,'cons').map(c => `<li>${c}</li>`).join('')}</ul></div>
@@ -2454,6 +3300,14 @@
             </div>
         `;
         modal.classList.add('active');
+    }
+
+
+    // ===== COURSE NOTIFICATION =====
+    function handleCourseNotify(btn) {
+        if (btn.classList.contains('notified')) return;
+        btn.classList.add('notified');
+        btn.textContent = t('modal_course_notify_done');
     }
 
     // ===== INIT =====
