@@ -759,6 +759,28 @@
         color: var(--accent-cyan);
         cursor: default;
     }
+    .course-badge.free-badge {
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: white;
+    }
+    .course-badge.paid-badge {
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: white;
+    }
+    .course-price {
+        font-size: 14px;
+        color: #a78bfa;
+        font-weight: 600;
+        margin-top: 4px;
+    }
+    .course-btn.learn-btn {
+        background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+        color: white;
+    }
+    .course-btn.learn-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(6,182,212,0.4);
+    }
     .toast-notification {
         position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(80px);
         background: rgba(6,182,212,0.15); border: 1px solid rgba(6,182,212,0.3);
@@ -871,6 +893,46 @@
             <div class="modal-body" id="modalBody"></div>
         </div>
     </div>
+    <!-- Course Detail Modal -->
+    <div class="modal-overlay" id="courseModal" onclick="if(event.target===this)closeCourseModal()" style="display:none;">
+        <div class="modal-content" style="max-width:600px;">
+            <button class="modal-close" onclick="closeCourseModal()">×</button>
+            <div style="text-align:center;margin-bottom:24px;">
+                <span class="course-badge free-badge" style="position:static;display:inline-block;margin-bottom:12px;">免费试听</span>
+                <h2 style="font-size:24px;background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">5分钟生成你的第一条AI视频</h2>
+                <p style="color:var(--text-secondary);margin-top:8px;">零基础入门 · 即梦AI实操教学</p>
+            </div>
+            <div style="margin-bottom:24px;">
+                <h3 style="font-size:16px;color:var(--text-primary);margin-bottom:12px;">📚 课程内容</h3>
+                <div style="display:flex;flex-direction:column;gap:8px;">
+                    <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--bg-card);border-radius:8px;">
+                        <span style="color:#10b981;">✓</span>
+                        <span style="color:var(--text-primary);font-size:14px;">即梦AI注册与界面介绍</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--bg-card);border-radius:8px;">
+                        <span style="color:#10b981;">✓</span>
+                        <span style="color:var(--text-primary);font-size:14px;">文生视频完整操作流程</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--bg-card);border-radius:8px;">
+                        <span style="color:#10b981;">✓</span>
+                        <span style="color:var(--text-primary);font-size:14px;">3个即用提示词模板</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--bg-card);border-radius:8px;">
+                        <span style="color:#10b981;">✓</span>
+                        <span style="color:var(--text-primary);font-size:14px;">万能提示词公式</span>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center;padding:20px;background:var(--bg-card);border-radius:12px;margin-bottom:24px;">
+                <p style="color:var(--text-secondary);font-size:14px;">🎬 视频课程即将上线</p>
+                <p style="color:var(--text-primary);font-size:13px;margin-top:4px;">关注我们的小红书，第一时间获取通知</p>
+            </div>
+            <div style="text-align:center;">
+                <button class="course-btn learn-btn" onclick="closeCourseModal()" style="width:100%;padding:12px;font-size:16px;">即将上线，敬请期待</button>
+            </div>
+        </div>
+    </div>
+
     <div class="toast-notification" id="toastNotification"></div>
 
     <section class="about" id="about">
@@ -921,35 +983,38 @@
             </div>
             <div class="courses-grid">
                 <div class="course-card">
-                    <span class="course-badge" data-i18n="courses_coming_soon">即将上线</span>
+                    <span class="course-badge free-badge" data-i18n="courses_free_trial">免费试听</span>
                     <div class="course-icon">🎬</div>
                     <span class="course-level-tag" data-i18n="courses_tag_beginner">入门</span>
-                    <h3 data-i18n="course1_title">零基础入门AI视频创作</h3>
-                    <p class="course-desc" data-i18n="course1_desc">无需任何经验，从选择工具到完成第一个AI视频，手把手带你入门</p>
-                    <button class="course-btn" onclick="handleCourseNotify(this)" data-i18n="modal_course_notify">通知我</button>
+                    <h3 data-i18n="course1_title">5分钟生成你的第一条AI视频</h3>
+                    <p class="course-desc" data-i18n="course1_desc">零基础入门，手把手教你用即梦AI生成第一个短视频，5分钟出成果</p>
+                    <button class="course-btn learn-btn" onclick="openCourseModal()" data-i18n="course1_btn">立即学习 →</button>
                 </div>
                 <div class="course-card">
-                    <span class="course-badge" data-i18n="courses_coming_soon">即将上线</span>
+                    <span class="course-badge paid-badge" data-i18n="courses_paid">即将上线</span>
                     <div class="course-icon">🔍</div>
                     <span class="course-level-tag" data-i18n="courses_tag_advanced">进阶</span>
                     <h3 data-i18n="course2_title">16款AI视频工具深度教程</h3>
                     <p class="course-desc" data-i18n="course2_desc">每款工具详细操作指南，帮你找到最适合自己的AI视频工具</p>
+                    <div class="course-price">¥99 预售</div>
                     <button class="course-btn" onclick="handleCourseNotify(this)" data-i18n="modal_course_notify">通知我</button>
                 </div>
                 <div class="course-card">
-                    <span class="course-badge" data-i18n="courses_coming_soon">即将上线</span>
+                    <span class="course-badge paid-badge" data-i18n="courses_paid">即将上线</span>
                     <div class="course-icon">💰</div>
                     <span class="course-level-tag" data-i18n="courses_tag_money">变现</span>
                     <h3 data-i18n="course3_title">AI视频商业变现全攻略</h3>
                     <p class="course-desc" data-i18n="course3_desc">从接单到自媒体运营，学会用AI视频赚钱的完整方法论</p>
+                    <div class="course-price">¥99 预售</div>
                     <button class="course-btn" onclick="handleCourseNotify(this)" data-i18n="modal_course_notify">通知我</button>
                 </div>
                 <div class="course-card">
-                    <span class="course-badge" data-i18n="courses_coming_soon">即将上线</span>
+                    <span class="course-badge paid-badge" data-i18n="courses_paid">即将上线</span>
                     <div class="course-icon">🎭</div>
                     <span class="course-level-tag" data-i18n="courses_tag_practice">实战</span>
                     <h3 data-i18n="course4_title">AI短剧制作实战营</h3>
                     <p class="course-desc" data-i18n="course4_desc">从剧本到成片，掌握AI短剧制作的完整工作流和变现路径</p>
+                    <div class="course-price">¥199 预售</div>
                     <button class="course-btn" onclick="handleCourseNotify(this)" data-i18n="modal_course_notify">通知我</button>
                 </div>
             </div>
@@ -1028,8 +1093,8 @@
             modal_course_notify_done: "\u2705 Added to waitlist!",
             courses_title: "AI Video Mastery Courses",
             courses_subtitle: "From beginner to monetization, master AI video creation",
-            course1_title: "AI Video Creation from Scratch",
-            course1_desc: "No experience needed. From choosing tools to completing your first AI video, step-by-step guidance",
+            course1_title: "Create Your First AI Video in 5 Minutes",
+            course1_desc: "Beginner-friendly tutorial. Learn to generate your first video with Jimeng AI in 5 minutes",
             course2_title: "In-Depth Guide to 16 AI Video Tools",
             course2_desc: "Detailed tutorials for each tool to help you find the perfect AI video tool",
             course3_title: "AI Video Monetization Masterclass",
@@ -1041,6 +1106,9 @@
             courses_tag_money: "Monetize",
             courses_tag_practice: "Hands-on",
             courses_coming_soon: "Coming Soon",
+            courses_free_trial: "Free Trial",
+            course1_btn: "Start Learning →",
+            courses_paid: "Coming Soon",
             nav_courses: "Courses",
         },
         zh: {
@@ -1078,8 +1146,8 @@
             modal_course_notify_done: "\u2705 \u5df2\u52a0\u5165\u7b49\u5f85\u5217\u8868\uff01",
             courses_title: "AI\u89c6\u9891\u521b\u4f5c\u5b9e\u6218\u8bfe",
             courses_subtitle: "\u4ece\u96f6\u57fa\u7840\u5230\u5546\u4e1a\u53d8\u73b0\uff0c\u7cfb\u7edf\u638c\u63e1AI\u89c6\u9891\u521b\u4f5c",
-            course1_title: "零基础入门AI视频创作",
-            course1_desc: "无需任何经验，从选择工具到完成第一个AI视频，手把手带你入门",
+            course1_title: "5分钟生成你的第一条AI视频",
+            course1_desc: "零基础入门，手把手教你用即梦AI生成第一个短视频，5分钟出成果",
             course2_title: "16款AI视频工具深度教程",
             course2_desc: "每款工具详细操作指南，帮你找到最适合自己的AI视频工具",
             course3_title: "AI视频商业变现全攻略",
@@ -1091,6 +1159,9 @@
             courses_tag_money: "\u53d8\u73b0",
             courses_tag_practice: "\u5b9e\u6218",
             courses_coming_soon: "\u5373\u5c06\u4e0a\u7ebf",
+            courses_free_trial: "\u514d\u8d39\u8bd5\u542c",
+            course1_btn: "\u7acb\u5373\u5b66\u4e60 \u2192",
+            courses_paid: "\u5373\u5c06\u4e0a\u7ebf",
             nav_courses: "\u8bfe\u7a0b",
         }
     };
@@ -3328,6 +3399,14 @@
         btn.classList.add('notified');
         btn.textContent = t('modal_course_notify_done');
         showToast(t('modal_course_notify_done'));
+    }
+    function openCourseModal() {
+        document.getElementById('courseModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+    function closeCourseModal() {
+        document.getElementById('courseModal').style.display = 'none';
+        document.body.style.overflow = '';
     }
 
     // ===== INIT =====
