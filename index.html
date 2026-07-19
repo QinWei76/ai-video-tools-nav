@@ -1511,6 +1511,7 @@
         },
         "rating": 4.5,
         "website": "https://runwayml.com",
+        "affiliateLink": ""
         "tags": {
             "en": [
                 "Professional",
@@ -1639,6 +1640,7 @@
         },
         "rating": 4.8,
         "website": "https://jimeng.jianying.com",
+        "affiliateLink": ""
         "tags": {
             "en": [
                 "ByteDance",
@@ -1769,6 +1771,7 @@
         },
         "rating": 4.3,
         "website": "https://klingai.com",
+        "affiliateLink": ""
         "tags": {
             "en": [
                 "Multi-Shot",
@@ -1897,6 +1900,7 @@
         },
         "rating": 4.2,
         "website": "https://pika.art",
+        "affiliateLink": ""
         "tags": {
             "en": [
                 "Easy to Use",
@@ -2023,6 +2027,7 @@
         },
         "rating": 4.7,
         "website": "https://www.synthesia.io",
+        "affiliateLink": ""
         "tags": {
             "en": [
                 "Enterprise",
@@ -2149,6 +2154,7 @@
         },
         "rating": 4.8,
         "website": "https://www.heygen.com",
+        "affiliateLink": ""
         "tags": {
             "en": [
                 "Avatar IV",
@@ -2277,6 +2283,7 @@
         },
         "rating": 4.4,
         "website": "https://lumalabs.ai/dream-machine",
+        "affiliateLink": ""
         "tags": {
             "en": [
                 "4K HDR",
@@ -2401,6 +2408,7 @@
         },
         "rating": 4.5,
         "website": "https://invideo.io",
+        "affiliateLink": ""
         "tags": {
             "en": [
                 "Templates",
@@ -2524,7 +2532,8 @@
             "zh": "免费版：每日积分 | Premium：~$8/月 | Pro：~$24/月 | Business：~$48-60/月 | Enterprise：~$149-199/月"
         },
         "rating": 4.3,
-        "website": "https://motivaiprivatelimited.sjv.io/B5e2m0",
+        "website": "https://pixverse.ai",
+        "affiliateLink": "https://motivaiprivatelimited.sjv.io/B5e2m0",
         "tags": {
             "en": [
                 "4K",
@@ -2649,6 +2658,7 @@
         },
         "rating": 4.4,
         "website": "https://www.vidu.com",
+        "affiliateLink": ""
         "tags": {
             "en": [
                 "Chinese Original",
@@ -2777,6 +2787,7 @@
         },
         "rating": 4.4,
         "website": "https://pictory.ai",
+        "affiliateLink": ""
         "tags": {
             "en": [
                 "Article to Video",
@@ -2901,6 +2912,7 @@
         },
         "rating": 4.6,
         "website": "https://www.flexclip.com",
+        "affiliateLink": ""
         "tags": {
             "en": [
                 "Online Editor",
@@ -3025,6 +3037,7 @@
         },
         "rating": 4.5,
         "website": "https://deepmind.google/technologies/veo/",
+        "affiliateLink": ""
         "tags": {
             "en": [
                 "4K",
@@ -3153,6 +3166,7 @@
         },
         "rating": 4.5,
         "website": "https://firefly.adobe.com",
+        "affiliateLink": ""
         "tags": {
             "en": [
                 "Commercial Safe",
@@ -3277,6 +3291,7 @@
         },
         "rating": 4.3,
         "website": "https://hailuoai.video",
+        "affiliateLink": ""
         "tags": {
             "en": [
                 "Budget-Friendly",
@@ -3403,6 +3418,7 @@
         },
         "rating": 4.7,
         "website": "https://www.colossyan.com",
+        "affiliateLink": ""
         "tags": {
             "en": [
                 "Enterprise L&D",
@@ -3609,7 +3625,7 @@
             <div class="modal-section"><h3>${t('modal_cons')}</h3><ul style="padding-left:20px;color:var(--text-secondary);line-height:2;font-size:14px;">${td(tool,'cons').map(c => `<li>${c}</li>`).join('')}</ul></div>
             <div class="modal-section"><h3>${t('modal_rating')}</h3>${ratingDisplay}</div>
             <div class="modal-actions">
-                <a href="${tool.website}" target="_blank" class="btn btn-primary">${t('modal_visit')}</a>
+                <a href="${tool.affiliateLink || tool.website}" target="_blank" class="btn btn-primary">${t('modal_visit')}</a>
                 <button class="btn btn-secondary" onclick="document.getElementById('toolModal').classList.remove('active')">${t('modal_close')}</button>
             </div>
         `;
