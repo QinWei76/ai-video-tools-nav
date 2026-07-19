@@ -1,0 +1,51 @@
+# AI Video Tools Directory
+> Comprehensive directory of the best AI video creation tools, curated for creators worldwide. Browse 16+ tools across video generation, editing, AI avatars, animation, and all-in-one platforms with detailed reviews, pricing, and recommendations.
+
+## What is this site?
+AI Video Tools Directory (https://qinwei76.github.io/ai-video-tools-nav/) is a curated collection of the top AI video creation tools available in 2026. We provide in-depth reviews, feature comparisons, pricing information, and use-case recommendations to help creators choose the right AI video tools for their needs.
+
+## Key Features
+- Curated selection of 16+ top AI video tools
+- Detailed 7-dimension reviews for each tool (features, pricing, pros/cons, use cases, ratings)
+- 5 main categories: Video Generation, Video Editing, AI Avatar, Animation, All-in-One
+- Real-time updates as new tools launch
+- Free AI video prompt template packs available
+
+## Tools Covered
+
+### Video Generation
+- **PixVerse** — AI-powered video generation with 4K upscale, text-to-video and image-to-video capabilities. Free tier available.
+- **Runway Gen-4** — Professional-grade AI video generation with advanced creative controls. From $15/month.
+- **Pika** — Creative AI video tool excelling in 3D/anime styles, social media content. From $10/month.
+- **Luma Dream Machine** — Fast, cinematic AI video generation. From $9.99/month.
+- **Kling AI** — Realistic human generation and natural motion, strong Chinese language support. From $10/month.
+- **即梦AI (Jimeng AI)** — Powered by Seedance 2.0, cinematic storyboarding and subject transfer. Free tier available.
+
+### Video Editing
+- **CapCut** — Free video editor with AI features, 30+ language subtitles. Best for TikTok/social media.
+- **Descript** — AI-powered video editing with transcription and text-based editing. From $24/month.
+
+### AI Avatar / Digital Human
+- **HeyGen** — AI avatar videos with lip-sync, translation, and personalized content. From $29/month.
+- **Synthesia** — Professional AI avatar platform for business and training videos. From $29/month.
+- **D-ID** — AI talking photo and digital avatar generation. From $5.90/month.
+
+### Animation
+- **Animaker** — DIY animation platform with AI-assisted character creation. Free tier available.
+- **Vidu** — Top-tier physics simulation for game CG and complex visual effects. From $9.99/month.
+
+### All-in-One Platforms
+- **InVideo** — Complete video creation platform with AI script-to-video. From $25/month.
+- **FlexClip** — Template-based video maker with AI features. Free tier available.
+- **Pictory** — AI blog-to-video and script-to-video conversion. From $19/month.
+
+## AI Video Prompt Template Pack
+We offer a professional AI video prompt template pack (60+ prompts, 10 scenarios, bilingual Chinese/English) for ¥29.9.
+
+## Contact & More Information
+Visit our full directory at https://qinwei76.github.io/ai-video-tools-nav/ for detailed reviews, comparisons, and direct links to each tool.
+
+## Recommended Reads
+- Best AI Video Tools for Beginners (2026): Tools rated 4+ stars with free tiers
+- AI Video Tools Comparison: Side-by-side feature and pricing comparison
+- AI Video Commercial Guide: How to monetize AI video creation
